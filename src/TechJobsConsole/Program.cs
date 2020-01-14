@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace TechJobsConsole
 {
@@ -119,14 +120,20 @@ namespace TechJobsConsole
 
         private static void PrintJobs(List<Dictionary<string, string>> someJobs)
         {
-            foreach (Dictionary<string, string> job in someJobs)
+            if (someJobs.Any() && someJobs != null)
             {
-                Console.WriteLine("*****");
-                foreach (KeyValuePair<string, string> kvp in job)
+                foreach (Dictionary<string, string> job in someJobs)
                 {
-                    Console.WriteLine(kvp.Key + ":" + kvp.Value);
-                }
-                Console.WriteLine("*****\n");
+                    Console.WriteLine("*****");
+                    foreach (KeyValuePair<string, string> kvp in job)
+                    {
+                        Console.WriteLine(kvp.Key + ":" + kvp.Value);
+                    }
+                    Console.WriteLine("*****\n");
+                }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
+            } else
+            {
+                Console.WriteLine("No Results");
             }
 
         }
