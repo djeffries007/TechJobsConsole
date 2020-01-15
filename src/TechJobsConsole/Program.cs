@@ -120,7 +120,7 @@ namespace TechJobsConsole
 
         private static void PrintJobs(List<Dictionary<string, string>> someJobs)
         {
-            if (someJobs.Any() && someJobs != null)
+            if (someJobs.Count !=0)
             {
                 foreach (Dictionary<string, string> job in someJobs)
                 {
